@@ -9,6 +9,7 @@ import { NavScrollService } from '../../services/scroll.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
+  menu: boolean = false
   isScroll: any;
   constructor(public navScroll: NavScrollService){}
 
@@ -17,6 +18,10 @@ export class NavbarComponent implements OnInit{
       this.isScroll = isScroll
     })
     console.log(this.isScroll)
+  }
+
+  setMenu() {
+    this.menu = !this.menu
   }
 
 }

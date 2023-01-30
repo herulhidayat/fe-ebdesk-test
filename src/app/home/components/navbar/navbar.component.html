@@ -1,19 +1,29 @@
-<nav id="navbar" [ngClass]="{'bg-[#2161D5]':isScroll, 'bg-transparent':!isScroll}" class="md:items-center md:justify-between md:flex text-[#04121F] font-rubik md:px-[150px] sticky top-0 z-50 text-[16px] pt-[40px] backdrop-blur">
+<nav id="navbar" [ngClass]="{'bg-[#2161D5]':isScroll, 'bg-transparent':!isScroll, 'max-md:bg-[#2161D5] h-screen':menu}" class="md:items-center md:justify-between md:flex text-[#04121F] font-rubik md:px-[150px] sticky top-0 z-50 text-[16px] pt-[40px] backdrop-blur px-5">
     <div class="my-auto py-2 justify-between items-center flex">
-        <img src="../../../../assets/images/Logo.svg" alt="logo" layout="intrinsic" width="132">
+        <img src="../../../../assets/images/Logo.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'hidden':menu, '':!menu}">
+        <img src="../../../../assets/images/Logo-white.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'':menu, 'hidden':!menu}">
         <div name="menu" id="menu" class="md:hidden" value=false>
-            <button onclick="setOpen()">
+            <button (click)="setMenu()">
                 <img
-                    src="./src/image/icons/bars-solid.svg"
+                    src="../../../../assets/images/bars-solid.svg"
                     alt="dash icon"
                     layout="intrinsic"
                     width="24"
                     height="24"
+                    [ngClass]="{'hidden':menu, '':!menu}"
+                />
+                <img
+                    src="../../../../assets/images/xmark-solid.svg"
+                    alt="dash icon"
+                    layout="intrinsic"
+                    width="24"
+                    height="24"
+                    [ngClass]="{'':menu, 'hidden':!menu}"
                 />
             </button>
         </div>
     </div>
-    <ul class="text-base font-normal md:py-0 md:pl-0 pl-7 md:flex md:items-center md:justify-between md:opacity-100 opacity-0 md:z-auto md:static absolute top-[-400px] gap-[40px]">
+    <ul class="text-base font-normal md:py-0 md:pl-0 md:flex md:items-center md:justify-between md:opacity-100 md:z-auto md:static gap-[40px]" [ngClass]="{'pl-7 max-md:text-white':menu,'opacity-0 absolute top-[-400px] ':!menu}">
         <li class="py-3 md:my-auto font-semibold">
             <a href="#home">Home</a>
         </li>
@@ -32,10 +42,10 @@
         <li class="py-3 md:my-auto">
             <a href="">About Us</a>
         </li>
-        <div class="md:py-0 py-4 md:pl-0 pl-7 md:flex md:items-center md:hidden gap-[40px]">
+        <div class="py-4 flex flex-row items-center md:hidden gap-[40px]">
             <a href="">Sign In</a>
             <a href="">
-                <button class="text-[#2161D5] bg-transparent hover:bg-[#2161D5] focus:ring-4 focus:ring-blue-300 font-medium rounded-[12px] text-sm px-5 py-2.5 mr-2 my-auto">Sign Up</button>
+                <button class="max-md:text-white bg-transparent max-md:hover:bg-white max-md:hover:text-[#2161D5] focus:ring-4 focus:ring-blue-300 font-medium rounded-full border-solid border-2 border-white text-sm px-5 py-2.5 mr-2 my-auto">Sign Up</button>
             </a>
         </div>
     </ul>
