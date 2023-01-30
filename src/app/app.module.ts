@@ -7,6 +7,9 @@ import { NavbarComponent } from './home/components/navbar/navbar.component';
 import { HeroComponent } from './home/components/hero/hero.component';
 import { ContentComponent } from './home/components/content/content.component';
 import { FooterComponent } from './home/components/footer/footer.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { FooterComponent } from './home/components/footer/footer.component';
     NavbarComponent,
     HeroComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorPageComponent,
+    LoginPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
