@@ -1,27 +1,26 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { NavScrollService } from '../../services/scroll.service';
-
-@HostListener('window:scroll', ['$event'])
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent{
   menu: boolean = false
   isScroll: any;
-  constructor(public navScroll: NavScrollService){}
-
-  ngOnInit(): void {
-    this.navScroll.isScroll.subscribe((isScroll) => {
-      this.isScroll = isScroll
-    })
-    console.log(this.isScroll)
-  }
 
   setMenu() {
     this.menu = !this.menu
+  }
+
+ @HostListener("window:scroll")
+  onScrolling() {
+    // console.log("aaa",window.scrollY)
+    if (window.scrollY > 20) {
+      this.isScroll = true
+    } else {
+      this.isScroll = false
+    }
   }
 
 }

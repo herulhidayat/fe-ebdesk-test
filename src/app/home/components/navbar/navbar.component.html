@@ -1,7 +1,8 @@
-<nav id="navbar" [ngClass]="{'bg-[#2161D5]':isScroll, 'bg-transparent':!isScroll, 'max-md:bg-[#2161D5] h-screen':menu}" class="md:items-center md:justify-between md:flex text-[#04121F] font-rubik md:px-[150px] sticky top-0 z-50 text-[16px] pt-[40px] backdrop-blur px-5">
+<nav id="navbar" [ngClass]="{'bg-[#2161D5] text-white py-[10px] transition-all ease-in':isScroll, 'text-[#04121F] pt-[40px]':!isScroll, 'max-md:bg-[#2161D5] h-screen transition-all ease-in':menu}" class="md:items-center md:justify-between md:flex font-rubik md:px-[150px] sticky top-0 z-50 text-[16px] px-5">
     <div class="my-auto py-2 justify-between items-center flex">
-        <img src="../../../../assets/images/Logo.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'hidden':menu, '':!menu}">
+        <img src="../../../../assets/images/Logo.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'hidden':menu || isScroll, '':!menu || isScroll}">
         <img src="../../../../assets/images/Logo-white.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'':menu, 'hidden':!menu}">
+        <img src="../../../../assets/images/Logo-white.svg" alt="logo" layout="intrinsic" width="132" [ngClass]="{'':isScroll, 'hidden':!isScroll || menu}">
         <div name="menu" id="menu" class="md:hidden" value=false>
             <button (click)="setMenu()">
                 <img
@@ -52,7 +53,8 @@
     <div class="md:py-0 py-4 md:pl-0 pl-7 md:flex md:items-center max-md:hidden gap-[40px] font-semibold">
         <a href="">Sign In</a>
         <a href="">
-            <button class="text-[#2161D5] hover:text-white bg-transparent hover:bg-[#2161D5] focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-[#2161D5] my-auto w-[150px] h-[45px]">Sign Up</button>
+            <button *ngIf="!isScroll" class="text-[#2161D5] hover:text-white bg-transparent hover:bg-[#2161D5] focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-[#2161D5] my-auto w-[150px] h-[45px]">Sign Up</button>
+            <button *ngIf="isScroll" class="text-white hover:text-[#2161D5] bg-transparent hover:bg-white focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-white my-auto w-[150px] h-[45px]">Sign Up</button>
         </a>
     </div>
 
