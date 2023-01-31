@@ -11,6 +11,10 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { AdminNavComponent } from './admin/components/admin-nav/admin-nav.component';
+import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-sidebar.component';
+import { DashboardAdminComponent } from './admin/pages/dashboard-admin/dashboard-admin.component';
+import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-source-admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { AboutComponent } from './about/about.component';
     ErrorPageComponent,
     LoginPageComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    AdminNavComponent,
+    AdminSidebarComponent,
+    DashboardAdminComponent,
+    DataSourceAdminComponent
   ],
   imports: [
     BrowserModule,
