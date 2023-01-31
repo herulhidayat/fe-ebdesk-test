@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginPageComponent},
+  { path: 'about', component: AboutComponent},
   //Wild Card Route for 404 request
   { path: '**', pathMatch: 'full', 
       component: ErrorPageComponent },

@@ -1,0 +1,142 @@
+<div class="font-rubik">
+    <nav id="navbar" [ngClass]="{'bg-[#2161D5] py-[10px] transition-all ease-in':isScroll, 'pt-[40px]':!isScroll, 'max-md:bg-[#2161D5] h-screen transition-all ease-in':menu}" class="text-white md:items-center md:justify-between md:flex font-rubik md:px-[150px] sticky top-0 z-50 text-[16px] px-5">
+        <div class="my-auto py-2 justify-between items-center flex">
+            <img src="../../../../assets/images/Logo-white.svg" alt="logo" layout="intrinsic" width="132">
+            <div name="menu" id="menu" class="md:hidden" value=false>
+                <button (click)="setMenu()">
+                    <img
+                        src="../../../../assets/images/bars-solid.svg"
+                        alt="dash icon"
+                        layout="intrinsic"
+                        width="24"
+                        height="24"
+                        [ngClass]="{'hidden':menu, '':!menu}"
+                    />
+                    <img
+                        src="../../../../assets/images/xmark-solid.svg"
+                        alt="dash icon"
+                        layout="intrinsic"
+                        width="24"
+                        height="24"
+                        [ngClass]="{'':menu, 'hidden':!menu}"
+                    />
+                </button>
+            </div>
+        </div>
+        <ul class="text-base font-normal md:py-0 md:pl-0 md:flex md:items-center md:justify-between md:opacity-100 md:z-auto md:static gap-[40px]" [ngClass]="{'pl-7 max-md:text-white':menu,'opacity-0 absolute top-[-400px] ':!menu}">
+            <li class="py-3 md:my-auto">
+                <a href="#">Home</a>
+            </li>
+            <li class="py-3 md:my-auto">
+                <a href="#product">Product</a>
+            </li>
+            <li class="py-3 md:my-auto">
+                <a href="#blog">Blog</a>
+            </li>
+            <li class="py-3 md:my-auto">
+                <a href="#pricing">Pricing</a>
+            </li>
+            <li class="py-3 md:my-auto">
+                <a href="#contact">Contact</a>
+            </li>
+            <li class="py-3 md:my-auto font-semibold">
+                <a href="/about">About Us</a>
+            </li>
+            <div class="py-4 flex flex-row items-center md:hidden gap-[40px]">
+                <a href="/login">Sign In</a>
+                <a href="/login">
+                    <button class="max-md:text-white bg-transparent max-md:hover:bg-white max-md:hover:text-[#2161D5] focus:ring-4 focus:ring-blue-300 font-medium rounded-full border-solid border-2 border-white text-sm px-5 py-2.5 mr-2 my-auto">Sign Up</button>
+                </a>
+            </div>
+        </ul>
+        <div class="md:py-0 py-4 md:pl-0 pl-7 md:flex md:items-center max-md:hidden gap-[40px] font-semibold">
+            <a href="/login">Sign In</a>
+            <a href="/login">
+                <button class="text-white hover:text-[#2161D5] bg-transparent hover:bg-white focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-white my-auto w-[150px] h-[45px]">Sign Up</button>
+            </a>
+        </div>
+    
+    </nav>
+    <div class="bg-[#2161D5] h-[734px] flex flex-col justify-center items-center mt-[-89px] relative gap-[60px]">
+        <img src="../../assets/images/Group 1930.svg" alt="" class="absolute z-0">
+        <img src="../../assets/images/bg-blue-out.svg" alt="" class="absolute z-0 bottom-[-180px] right-0 max-md:hidden">
+        <div class="flex flex-col justify-center items-center relative z-10 gap-[30px]">
+            <p class="text-[60px] font-medium text-white">About Us</p>
+            <p class="text-[16px] font-reguler text-white max-w-[563px] text-center">A small company offering data-driven solutions for campaign effectiveness using spatial data and detailed analysis of target audience (voters). Use technology that unites spatial data science and political science.</p>
+        </div>
+        <button class="font-rubik font-bold text-[16px] w-[241px] h-[56px] rounded-full border-2 border-solid border-white bg-transparent text-white hover:bg-white hover:text-[#2161D5] hover:shadow-[0px_25px_60px_-15px_rgba(0,0,0,0.3)] hover:shadow-white relative z-10">Contact Us</button>
+    </div>
+    <div class="flex flex-col justify-center items-center md:px-[150px] mt-[118px]">
+        <div class="flex flex-col justify-center items-center gap-[30px]">
+            <img src="../../assets/images/fa-solid_quote-left.svg" alt="" class="w-[50px]">
+            <p class="text-[#4F5665] font-normal text-[24px] max-w-[700px] text-center">In just small steps you’ll connected directly to our technology. Knowledge about your own-power, your rivals, your voters, and your region in Election.</p>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center mt-[130px] gap-[60px] font-rubik">
+        <div class="flex flex-col justify-center items-center gap-[60px]">
+            <p class="text-[35px] font-bold">Our Advisors</p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-[30px]">
+                <div class="flex flex-col justify-center items-center gap-[10px]">
+                    <img src="../../assets/images/Placeholder.png" alt="">
+                    <p class="mt-[10px] text-medium text-[22px] text-[#0B132A]">Xavier Oswald</p>
+                    <p class="text-[#4F5665] text-[14px] font-medium uppercase">co-founder, developer</p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-[10px]">
+                    <img src="../../assets/images/Placeholder (1).png" alt="">
+                    <p class="mt-[10px] text-medium text-[22px] text-[#0B132A]">Sara Creighton</p>
+                    <p class="text-[#4F5665] text-[14px] font-medium uppercase">co-founder, developer</p>
+                </div>
+                <div class="flex flex-col justify-center items-center gap-[10px]">
+                    <img src="../../assets/images/Placeholder (2).png" alt="">
+                    <p class="mt-[10px] text-medium text-[22px] text-[#0B132A]">Brandon Ogden</p>
+                    <p class="text-[#4F5665] text-[14px] font-medium uppercase">project manager</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center mt-[70px] gap-[60px] font-rubik">
+        <div class="flex flex-col justify-center items-center gap-[20px]">
+            <p class="text-[35px] font-bold">What Political Figure Say</p>
+            <p>These are the stories of political figure who have joined us with great pleasure when using this crazy feature.</p>
+        </div>
+        <div class="flex flex-row justify-between items-center gap-[40px]">
+            <div class="border-2 border-solid border-[#DDDDDD] rounded-[20px] hover:border-[#2161D5] w-[400px] h-[230px]">
+                <div class="flex flex-col justify-center items-start p-[28px] gap-[19px]">
+                    <div class="flex flex-row justify-start items-start gap-[20px]">
+                        <img src="../../assets/images/Ellipse 175.png" alt="">
+                        <div>
+                            <p class="text-[18px] font-medium text-[#0B132A]">Airlangga Hartanto</p>
+                            <p class="text-[14px] font-normal text-[#4F5665]">Menteri Koordinator dan Perekonomian RI</p>
+                        </div>
+                    </div>
+                    <p class="text-[16px] font-reguler text-[#0B132A]">Saya minta kepada segenap pengurus DPD, provinsi, kabupten dan kota, untuk kita harus memiliki roadmap 2024. Di tahun melakukan penggalangan opini masyarakat</p>
+                </div>
+            </div>
+            <div class="border-2 border-solid border-[#DDDDDD] rounded-[20px] hover:border-[#2161D5] w-[400px] h-[230px]">
+                <div class="flex flex-col justify-center items-start p-[28px] gap-[19px]">
+                    <div class="flex flex-row justify-start items-start gap-[20px]">
+                        <img src="../../assets/images/Ellipse 175 (1).png" alt="">
+                        <div>
+                            <p class="text-[18px] font-medium text-[#0B132A]">Jokowi Dodo</p>
+                            <p class="text-[14px] font-normal text-[#4F5665]">Presiden RI</p>
+                        </div>
+                    </div>
+                    <p class="text-[16px] font-reguler text-[#0B132A]">Daerah merupakan bagian dari pemerintah yang langsung berinteraksi dengan </p>
+                </div>
+            </div>
+            <div class="border-2 border-solid border-[#DDDDDD] rounded-[20px] hover:border-[#2161D5] w-[400px] h-[230px]">
+                <div class="flex flex-col justify-center items-start p-[28px] gap-[19px]">
+                    <div class="flex flex-row justify-start items-start gap-[20px]">
+                        <img src="../../assets/images/Ellipse 175 (2).png" alt="">
+                        <div>
+                            <p class="text-[18px] font-medium text-[#0B132A]">Puan Maharani</p>
+                            <p class="text-[14px] font-normal text-[#4F5665]">Ketua DPR dan Fraksi PDI Perjuangan</p>
+                        </div>
+                    </div>
+                    <p class="text-[16px] font-reguler text-[#0B132A]">Daerah merupakan bagian dari pemerintah yang langsung berinteraksi dengan masyarakat ketikaproses demokratisasi berlangsung.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -25,34 +25,34 @@
         </div>
     </div>
     <ul class="text-base font-normal md:py-0 md:pl-0 md:flex md:items-center md:justify-between md:opacity-100 md:z-auto md:static gap-[40px]" [ngClass]="{'pl-7 max-md:text-white':menu,'opacity-0 absolute top-[-400px] ':!menu}">
-        <li class="py-3 md:my-auto font-semibold">
-            <a href="#home">Home</a>
+        <li class="py-3 md:my-auto" [ngClass]="{'font-semibold':home, '':!home}">
+            <a href="#">Home</a>
+        </li>
+        <li class="py-3 md:my-auto" [ngClass]="{'font-semibold':product, '':!product}">
+            <a href="#product">Product</a>
+        </li>
+        <li class="py-3 md:my-auto" [ngClass]="{'font-semibold':blog, '':!blog}">
+            <a href="#blog">Blog</a>
+        </li>
+        <li class="py-3 md:my-auto" [ngClass]="{'font-semibold':pricing, '':!pricing}">
+            <a href="#pricing">Pricing</a>
+        </li>
+        <li class="py-3 md:my-auto" [ngClass]="{'font-semibold':contact, '':!contact}">
+            <a href="#contact">Contact</a>
         </li>
         <li class="py-3 md:my-auto">
-            <a href="">Product</a>
-        </li>
-        <li class="py-3 md:my-auto">
-            <a href="">Blog</a>
-        </li>
-        <li class="py-3 md:my-auto">
-            <a href="">Pricing</a>
-        </li>
-        <li class="py-3 md:my-auto">
-            <a href="">Contact</a>
-        </li>
-        <li class="py-3 md:my-auto">
-            <a href="">About Us</a>
+            <a href="/about">About Us</a>
         </li>
         <div class="py-4 flex flex-row items-center md:hidden gap-[40px]">
-            <a href="">Sign In</a>
-            <a href="">
+            <a href="/login">Sign In</a>
+            <a href="/login">
                 <button class="max-md:text-white bg-transparent max-md:hover:bg-white max-md:hover:text-[#2161D5] focus:ring-4 focus:ring-blue-300 font-medium rounded-full border-solid border-2 border-white text-sm px-5 py-2.5 mr-2 my-auto">Sign Up</button>
             </a>
         </div>
     </ul>
     <div class="md:py-0 py-4 md:pl-0 pl-7 md:flex md:items-center max-md:hidden gap-[40px] font-semibold">
-        <a href="">Sign In</a>
-        <a href="">
+        <a href="/login">Sign In</a>
+        <a href="/login">
             <button *ngIf="!isScroll" class="text-[#2161D5] hover:text-white bg-transparent hover:bg-[#2161D5] focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-[#2161D5] my-auto w-[150px] h-[45px]">Sign Up</button>
             <button *ngIf="isScroll" class="text-white hover:text-[#2161D5] bg-transparent hover:bg-white focus:ring-4 focus:ring-blue-300 rounded-full border-solid border-2 border-white my-auto w-[150px] h-[45px]">Sign Up</button>
         </a>
