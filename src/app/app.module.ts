@@ -15,6 +15,7 @@ import { AdminNavComponent } from './admin/components/admin-nav/admin-nav.compon
 import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-sidebar.component';
 import { DashboardAdminComponent } from './admin/pages/dashboard-admin/dashboard-admin.component';
 import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-source-admin.component';
+import { MenuService } from './admin/services/menu.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,9 @@ import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-s
   imports: [
     BrowserModule,
     AppRoutingModule
+  ],
+  providers: [
+    MenuService
   ],
   bootstrap: [AppComponent]
 })

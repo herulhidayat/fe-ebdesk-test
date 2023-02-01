@@ -1,61 +1,62 @@
-<aside class="w-full h-screen fixed top-0 z-10 max-h-screen flex flex-row font-rubik">
-    <div class="bg-[#2A3042] w-[240px] flex flex-col justify-start items-start p-[24px] gap-[45px]">
+<aside class="h-screen fixed top-0 z-10 max-h-screen flex flex-row font-rubik">
+    <div class="bg-[#2A3042] flex flex-col justify-start items-start p-[24px] gap-[45px] transition-all ease-linear" [ngClass]="{'w-[75px]':isMenu, 'w-[240px]':!isMenu}">
         <div>
-            <img src="../../../../assets/images/admin/Logo-admin.svg" alt="" class="w-[132px]">
+            <img src="../../../../assets/images/admin/Logo-admin.svg" alt="" class="w-[132px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">
+            <img src="../../../../assets/images/admin/Logo-admin-small.svg" alt="" class="h-[33px] absolute left-[20px]" [ngClass]="{'':isMenu, 'hidden':!isMenu}">
         </div>
-        <div class="flex flex-col justify-start items-start gap-[15px]">
+        <div class="flex flex-col items-start gap-[15px]">
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_dash (1).svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Dashboard</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Dashboard</p>
             </div>
 
-            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]">Data</p>
+            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data</p>
 
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_slack.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Visualization</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Visualization</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_archive.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Case</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Case</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_server.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Data Set</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data Set</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_database.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Data Source</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data Source</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_wifi.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Connection</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Connection</p>
             </div>
 
-            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]">Assets</p>
+            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">Assets</p>
 
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_figma.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Icon</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Icon</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_image.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Image</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Image</p>
             </div>
 
-            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]">Authorization</p>
+            <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">Authorization</p>
 
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_user.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Account</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Account</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_pocket.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Role</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Role</p>
             </div>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_workspace.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal">Workspace</p>
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Workspace</p>
             </div>
         </div>
     </div>
