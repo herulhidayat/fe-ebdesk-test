@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       fontFamily: {
         rubik : ["'Rubik', sans-serif"],
-        mulish : ["'Mulish, sans-serif"]
+        mulish : ["'Mulish', sans-serif"],
+        poppins : ["'Poppins', sans-serif"]
       },
     },
   },
