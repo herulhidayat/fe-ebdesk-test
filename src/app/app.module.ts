@@ -16,6 +16,7 @@ import { AdminSidebarComponent } from './admin/components/admin-sidebar/admin-si
 import { DashboardAdminComponent } from './admin/pages/dashboard-admin/dashboard-admin.component';
 import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-source-admin.component';
 import { MenuService } from './admin/services/menu.service';
+import { DataTableComponent } from './admin/components/data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MenuService } from './admin/services/menu.service';
     AdminNavComponent,
     AdminSidebarComponent,
     DashboardAdminComponent,
-    DataSourceAdminComponent
+    DataSourceAdminComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,19 @@
-<p>data-source-admin works!</p>
+<app-admin-nav></app-admin-nav>
+<app-admin-sidebar></app-admin-sidebar>
+<main class="bg-[#F5F6FA] min-h-screen pt-16" id="main" [ngClass]="{'ml-[75px]':isMenu, 'ml-[240px]':!isMenu}">
+    <div class="py-[50px] px-[30px] flex flex-col justify-start items-start gap-[35px]">
+        <div class="flex flex-row justify-start items-center gap-[8px]">
+            <img src="../../../../assets/images/admin/Home.svg" alt="" class="w-[18px]">
+            <img src="../../../../assets/images/admin/arrow-right.svg" alt="" class="h-[16px]">
+            <p class="text-[#44556C] text-[13px] font-medium">Statistik</p>
+            <img src="../../../../assets/images/admin/arrow-right.svg" alt="" class="h-[16px]">
+            <p class="text-[#8697A8] text-[13px] font-medium">Wilayah</p>
+        </div>
+        <app-data-table class="w-full"></app-data-table>
+        <!-- <div class="flex flex-row gap-[26px]">
+            <div class="bg-[#FFFFFF] rounded-[7px] drop-shadow ">
+                a
+            </div>
+        </div> -->
+    </div>
+</main>
