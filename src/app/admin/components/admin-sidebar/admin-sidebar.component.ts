@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuService } from '../../services/menu.service';
 
 @Component({
@@ -8,12 +9,20 @@ import { MenuService } from '../../services/menu.service';
 })
 export class AdminSidebarComponent {
   isMenu: boolean = false
+  active: any
+  @Input() isDash: string = ''
+  @Input() isDsource: string = ''
+  isActive: boolean = false
 
-  constructor(public menuService: MenuService) {}
+  constructor(public menuService: MenuService, public router: Router) {}
 
   ngOnInit(): void {
     this.menuService.isMenu.subscribe((isMenu) => {
       this.isMenu = isMenu
     })
+    this.active = this.router.url
+    console.log(this.isDash)
+    console.log(this.isDsource)
+    console.log(this.active)
   }
 }

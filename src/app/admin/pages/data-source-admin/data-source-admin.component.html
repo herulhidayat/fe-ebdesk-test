@@ -1,5 +1,5 @@
 <app-admin-nav></app-admin-nav>
-<app-admin-sidebar></app-admin-sidebar>
+<app-admin-sidebar [isDsource]="isDsource"></app-admin-sidebar>
 <main class="bg-[#F5F6FA] min-h-screen pt-16" id="main" [ngClass]="{'ml-[75px]':isMenu, 'ml-[240px]':!isMenu}">
     <div class="py-[50px] px-[30px] flex flex-col justify-start items-start gap-[35px]">
         <div class="flex flex-row justify-start items-center gap-[8px]">

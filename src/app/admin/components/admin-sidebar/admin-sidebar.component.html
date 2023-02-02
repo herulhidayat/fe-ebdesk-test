@@ -5,10 +5,11 @@
             <img src="../../../../assets/images/admin/Logo-admin-small.svg" alt="" class="h-[33px] absolute left-[20px]" [ngClass]="{'':isMenu, 'hidden':!isMenu}">
         </div>
         <div class="flex flex-col items-start gap-[15px]">
-            <div class="flex flex-row justify-start items-center gap-[14px]">
-                <img src="../../../../assets/images/admin/fi_dash (1).svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Dashboard</p>
-            </div>
+            <a href="/admin" class="flex flex-row justify-start items-center gap-[14px]">
+                <img src="../../../../assets/images/admin/fi_dash (1).svg" alt="" [ngClass]="{'hidden': active === isDash, '': active !== isDash}">
+                <img src="../../../../assets/images/admin/fi_dash.svg" alt="" [ngClass]="{'': active === isDash, 'hidden': active !== isDash}">
+                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu, 'text-white font-semibold': active === isDash, 'text-[#A6B0CF] font-normal': active !== isDash}">Dashboard</p>
+            </a>
 
             <p class="text-[#A6B0CF] text-[11px] font-semibold uppercase font-poppins py-[1px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data</p>
 
@@ -24,10 +25,11 @@
                 <img src="../../../../assets/images/admin/fi_server.svg" alt="">
                 <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data Set</p>
             </div>
-            <div class="flex flex-row justify-start items-center gap-[14px]">
-                <img src="../../../../assets/images/admin/fi_database.svg" alt="">
-                <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Data Source</p>
-            </div>
+            <a href="/admin/data-source" class="flex flex-row justify-start items-center gap-[14px]">
+                <img src="../../../../assets/images/admin/fi_database.svg" alt="" [ngClass]="{'hidden': active === isDsource, '': active !== isDsource}">
+                <img src="../../../../assets/images/admin/fi_database (1).svg" alt="" [ngClass]="{'': active === isDsource, 'hidden': active !== isDsource}">
+                <p class="text-[13px]" [ngClass]="{'hidden':isMenu, '':!isMenu, 'text-white font-semibold': active === isDsource, 'text-[#A6B0CF] font-normal': active !== isDsource}">Data Source</p>
+            </a>
             <div class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_wifi.svg" alt="">
                 <p class="text-[#A6B0CF] text-[13px] font-normal" [ngClass]="{'hidden':isMenu, '':!isMenu}">Connection</p>

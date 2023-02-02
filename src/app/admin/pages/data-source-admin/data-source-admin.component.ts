@@ -8,6 +8,7 @@ import { MenuService } from '../../services/menu.service';
 })
 export class DataSourceAdminComponent {
   isMenu: boolean = false
+  isDsource = "/admin/data-source"
 
   constructor(public menuService: MenuService) {}
 

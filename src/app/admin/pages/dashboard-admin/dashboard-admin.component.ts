@@ -8,6 +8,7 @@ import { MenuService } from '../../services/menu.service';
 })
 export class DashboardAdminComponent {
   isMenu: boolean = false
+  isDash = "/admin"
 
   constructor(public menuService: MenuService) {}
 
