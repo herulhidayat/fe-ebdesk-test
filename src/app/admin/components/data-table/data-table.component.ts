@@ -69,4 +69,18 @@ export class DataTableComponent {
     this.users = []
     this.users = this.data.slice(pageIndex,endIndex)
   }
+
+  nextPage() {
+    if (this.selectedPage < this.pageNumbers.length) {
+      this.selectedPage++
+      this.changePage(this.selectedPage)
+    }
+  }
+
+  prevPage() {
+    if (this.selectedPage > 1) {
+      this.selectedPage--
+      this.changePage(this.selectedPage)
+    }
+  }
 }
