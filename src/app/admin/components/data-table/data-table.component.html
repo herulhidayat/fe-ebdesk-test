@@ -15,27 +15,37 @@
             <p class="col-span-2">Last Update</p>
             <p class="col-span-1">Action</p>
         </li>
-        <li class="bg-white drop-shadow-sm h-[73px] grid grid-cols-11 justify-start items-center font-regular text-[14px] text-[#0B132A] w-full p-[16px] gap-[16px]">
+        <li *ngFor="let user of users" class="bg-white drop-shadow-sm h-[73px] grid grid-cols-11 justify-start items-center font-regular text-[14px] text-[#0B132A] w-full p-[16px] gap-[16px]">
             <div class="col-span-3 gap-[20px] flex flex-row items-center">
-                <img src="../../../../assets/images/admin/Ellipse 256.png" alt="">
-                <p class="">Kristin Watson</p>
+                <img src={{user.image}} alt="" class="w-[40px] h-[40px] rounded-full">
+                <p class="">{{user.firstName + " " + user.lastName}}</p>
             </div>
-            <p class="col-span-2">@kristinwatson</p>
-            <p class="col-span-2">kristinwatson@gmail.com</p>
-            <p class="col-span-1">Female</p>
+            <p class="col-span-2">{{user.username}}</p>
+            <p class="col-span-2">{{user.email}}</p>
+            <p class="col-span-1">{{user.gender}}</p>
             <p class="col-span-2">Jun 15, 08:30:04</p>
             <button class="col-span-1"><img src="../../../../assets/images/admin/u_ellipsis-h.svg" alt=""></button>
         </li>
     </ul>
     <div class="flex flex-row justify-between w-full">
-        <p class="text-[#4F5665] text-[14px] font-normal">Showing 7 of 50 User</p>
-        <div class="bg-white drop-shadow-sm rounded-[5px] w-[282px] h-[42px] text-[14px] font-semibold text-[#0B132A] flex flex-row justify-center items-center">
+        <p class="text-[#4F5665] text-[14px] font-normal">Showing 
+            <select [value]="userPerPage" (change)="changePageSize($event)">
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select> of {{data.length}} User
+        </p>
+        <!-- <div class="bg-white drop-shadow-sm rounded-[5px] w-[282px] h-[42px] text-[14px] font-semibold text-[#0B132A] flex flex-row justify-center items-center">
             <button class="w-[38px] h-[38px] flex justify-center items-center"><img src="../../../../assets/images/admin/u_angle-left-b.svg" alt=""></button>
-            <button class="w-[38px] h-[38px] bg-[#3A70D9] rounded-[5px] text-white">1</button>
+            <button class="w-[38px] h-[38px] bg-[#3A70D9] rounded-[5px] text-white" *ngFor="let page of pageNumbers">1</button>
             <button class="w-[38px] h-[38px]">2</button>
             <button class="w-[38px] h-[38px]">3</button>
             <button class="w-[38px] h-[38px] flex justify-center items-center"><img src="../../../../assets/images/admin/u_ellipsis-h.svg" alt=""></button>
             <button class="w-[38px] h-[38px]">3</button>
+            <button class="w-[38px] h-[38px] flex justify-center items-center"><img src="../../../../assets/images/admin/u_angle-right-b.svg" alt=""></button>
+        </div> -->
+        <div class="bg-white drop-shadow-sm rounded-[5px] w-[282px] h-[42px] text-[14px] font-semibold text-[#0B132A] flex flex-row justify-center items-center">
+            <button class="w-[38px] h-[38px] flex justify-center items-center"><img src="../../../../assets/images/admin/u_angle-left-b.svg" alt=""></button>
+            <button class="w-[38px] h-[38px]" *ngFor="let page of pageNumbers" (click)="changePage(page)" [ngClass]="{'bg-[#3A70D9] rounded-[5px] text-white':page == selectedPage}">{{page}}</button>
             <button class="w-[38px] h-[38px] flex justify-center items-center"><img src="../../../../assets/images/admin/u_angle-right-b.svg" alt=""></button>
         </div>
     </div>

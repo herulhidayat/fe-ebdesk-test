@@ -17,6 +17,7 @@ import { DashboardAdminComponent } from './admin/pages/dashboard-admin/dashboard
 import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-source-admin.component';
 import { MenuService } from './admin/services/menu.service';
 import { DataTableComponent } from './admin/components/data-table/data-table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DataTableComponent } from './admin/components/data-table/data-table.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     MenuService
