@@ -21,8 +21,5 @@ export class AdminSidebarComponent {
       this.isMenu = isMenu
     })
     this.active = this.router.url
-    console.log(this.isDash)
-    console.log(this.isDsource)
-    console.log(this.active)
   }
 }
