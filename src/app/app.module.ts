@@ -18,6 +18,9 @@ import { DataSourceAdminComponent } from './admin/pages/data-source-admin/data-s
 import { MenuService } from './admin/services/menu.service';
 import { DataTableComponent } from './admin/components/data-table/data-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './admin/services/auth.service';
+import { AuthGuard } from './admin/services/auth.guard';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,10 +42,13 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    MenuService
+    MenuService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
