@@ -4,7 +4,7 @@
             <img src="../../../../assets/images/admin/fi_search.svg" alt="">
             <input type="text" placeholder="Search user management" class="outline-none border-none bg-transparent grow placeholder:font-normal placeholder:text-[13px]">
         </div>
-        <button class="right-0 bg-[#3A70D9] drop-shadow-sm rounded-[5px] text-white active:bg-[#3463c3] w-[104px] h-[37px] font-semibold text-[13px]">Add User</button>
+        <button class="right-0 bg-[#3A70D9] drop-shadow-sm rounded-[5px] text-white active:bg-[#3463c3] w-[104px] h-[37px] font-semibold text-[13px]" (click)="setModalAdd()">Add User</button>
     </div>
     <ul class="flex flex-col gap-[12px] w-full">
         <li class="bg-white drop-shadow-sm h-[39px] grid grid-cols-11 justify-start items-center font-medium text-[13px] text-[#0B132A] w-full px-[16px] gap-[16px]">
@@ -24,7 +24,19 @@
             <p class="col-span-2">{{user.email}}</p>
             <p class="col-span-1">{{user.gender}}</p>
             <p class="col-span-2">Jun 15, 08:30:04</p>
-            <button class="col-span-1"><img src="../../../../assets/images/admin/u_ellipsis-h.svg" alt=""></button>
+            <button class="col-span-1" (click)="setAct(user.id); setMore()"><img src="../../../../assets/images/admin/u_ellipsis-h.svg" alt=""></button>
+            <div [ngClass]="more && isAct === user.id ? '':'hidden'" class="absolute right-[120px] top-[10px] bg-white drop-shadow-lg">
+                <div class="flex flex-col justify-center border-[1px] divide-y divide-[#FAFAFA] p-[8px] text-sm min-w-[140px]">
+                    <button class="flex flex-row items-start gap-[8px] py-1 hover:font-semibold">
+                        <img src="../../../../assets/images/admin/edit.svg" alt="">
+                        <p class="text-[#3F4254]">Edit</p>
+                    </button>
+                    <button class="flex flex-row items-start gap-[8px] py-1 hover:font-semibold">
+                        <img src="../../../../assets/images/admin/delete.svg" alt="">
+                        <p class="text-[#3F4254]">Delete</p>
+                    </button>
+                </div>
+            </div>
         </li>
     </ul>
     <div class="flex flex-row justify-between w-full">
@@ -38,6 +50,63 @@
             <button class="w-[38px] h-[38px] flex justify-center items-center active:bg-[#3A70D9] rounded-[5px]"><img src="../../../../assets/images/admin/u_angle-left-b.svg" alt="" (click)="prevPage()"></button>
             <button class="w-[38px] h-[38px]" *ngFor="let page of pageNumbers" (click)="changePage(page)" [ngClass]="{'bg-[#3A70D9] rounded-[5px] text-white':page == selectedPage}">{{page}}</button>
             <button class="w-[38px] h-[38px] flex justify-center items-center active:bg-[#3A70D9] rounded-[5px]"><img src="../../../../assets/images/admin/u_angle-right-b.svg" alt="" (click)="nextPage()"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Add -->
+<div [ngClass]="{'hidden':!modalAdd}" class="fixed bg-black/50 top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full flex justify-center items-center font-rubik">
+    <div class="relative w-full h-full max-w-2xl md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow">
+            <div class="flex items-start justify-between p-4 border-b rounded-">
+                <h3 class="text-xl font-semibold text-gray-900">
+                    Add User
+                </h3>
+                <button (click)="setModalAdd()" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="defaultModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form action="">
+            <div class="p-6 space-y-6">
+                <div class="flex flex-col justify-start items-center gap-[20px]">
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">First Name</p>
+                        <input type="text" [(ngModel)]="firstName" name="firstName"  class="px-[20px] border-2 border-solid border-[#D9D9D9] rounded-[6px] w-[300px] h-[40px]">
+                    </div>
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">Last Name</p>
+                        <input type="text" [(ngModel)]="lastName" name="lastName" class="px-[20px] border-2 border-solid border-[#D9D9D9] rounded-[6px] w-[300px] h-[40px]">
+                    </div>
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">Email</p>
+                        <input type="email" [(ngModel)]="email" name="email" class="px-[20px] border-2 border-solid border-[#D9D9D9] rounded-[6px] w-[300px] h-[40px]">
+                    </div>
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">Username</p>
+                        <input type="text" [(ngModel)]="username" name="username" class="px-[20px] border-2 border-solid border-[#D9D9D9] rounded-[6px] w-[300px] h-[40px]">
+                    </div>
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">Gender</p>
+                        <select [(ngModel)]="gender" name="gender" class="px-[20px] border-2 border-solid border-[#D9D9D9] rounded-[6px] w-[300px] h-[40px]">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col justify-start items-start gap-[5px]">
+                        <p class="font-normal text-[14px]">Profil Picture</p>
+                        <input type="file" [(ngModel)]="image" name="image" class="px-[20px] file:border-2 file:border-solid file:border-[#D9D9D9] file:rounded-[6px] w-[300px] h-[40px]">
+                    </div>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b">
+                <button (click)="addUser()" data-modal-hide="defaultModal" type="button" class="text-white bg-[#3A70D9] hover:bg-[#3463c3] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
+                <button data-modal-hide="defaultModal" type="button" (click)="setModalAdd()" class="text-white bg-[#ec4a4a] hover:bg-[#cc4040] focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10">Cancel</button>
+            </div>
+            </form>
         </div>
     </div>
 </div>

@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './admin/services/auth.service';
 import { AuthGuard } from './admin/services/auth.guard';
 import { FormsModule } from '@angular/forms';
+import { CrudUserService } from './admin/services/crud-user.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FormsModule } from '@angular/forms';
   providers: [
     MenuService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    CrudUserService
   ],
   bootstrap: [AppComponent]
 })
