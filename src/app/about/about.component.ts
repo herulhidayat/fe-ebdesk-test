@@ -15,7 +15,6 @@ export class AboutComponent {
 
  @HostListener("window:scroll")
   onScrolling() {
-    // console.log("aaa",window.scrollY)
     if (window.scrollY > 20) {
       this.isScroll = true
     } else {

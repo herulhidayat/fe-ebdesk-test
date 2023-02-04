@@ -23,6 +23,8 @@ export class DataTableComponent {
   public selectedPage = 1;
   users: any[] = []
   modalAdd: boolean = false
+  modalEdit: boolean = false
+  id = 0
   firstName = ''
   lastName = ''
   username = ''
@@ -31,6 +33,7 @@ export class DataTableComponent {
   image = ''
   isAct: any;
   more: boolean = false
+  selectedUser: any;
 
   constructor(private http : HttpClient, private crudService: CrudUserService) {
   }
@@ -56,6 +59,8 @@ export class DataTableComponent {
       }
     }
     // End of Get Data Users
+
+    this.data
   }
 
   // Start of paginate function
@@ -100,24 +105,74 @@ export class DataTableComponent {
   // Add User's Modal
   setModalAdd() {
     this.modalAdd = !this.modalAdd
+    this.firstName = '';
+    this.lastName = '';
+    this.email = '';
+    this.username = '';
+    this.gender = '';
+    this.image = '';
   }
 
   addUser() {
     from(this.crudService.addUser(this.firstName, this.lastName, this.username, this.email, this.gender, this.image))
     .subscribe(res => {
       this.data.push(res)
-      console.log(this.users)
     }
     );
   }
 
   setAct(id:string) {
     this.isAct = id
-    console.log(this.isAct)
+    this.id = this.isAct
   }
 
   setMore() {
     this.more = !this.more
   }
 
+  // Edit User's Modal
+  setModalEdit() {
+    this.modalEdit = !this.modalEdit
+  }
+
+  setEditUser(user:any) {
+    if(user.id == this.isAct) {
+      this.id = this.isAct
+      this.selectedUser = user;
+      this.firstName = user.firstName;
+      this.lastName = user.lastName;
+      this.email = user.email;
+      this.username = user.username;
+      this.gender = user.gender;
+      this.image = user.image;
+      this.modalEdit = true;
+    }
+  }
+
+  editUser() {
+    from(this.crudService.editUser(this.id, this.firstName, this.lastName, this.username, this.email, this.gender, this.image))
+    .subscribe(res => {
+      let updated = false;
+      this.data = this.data.map(obj => {
+        if (obj.id === res.id) {
+          updated = true;
+          return res;
+        }
+        return obj;
+      });
+      if (!updated) {
+        this.data.push(res);
+      }
+      alert("Data berhasil diupdate")
+    }
+    );
+  }
+
+  deleteUser() {
+    from(this.crudService.deleteUser(this.id))
+    .subscribe(res => {
+      this.data = this.data.filter(item => item.id !== res.id);
+    }
+    );
+  }
 }
