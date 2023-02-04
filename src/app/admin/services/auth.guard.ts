@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
     if (this.isTokenValid()) {
       return true;
     } else {
-      alert('Username dan password salah');
+      alert('Login gagal');
       this.router.navigate(['/login']);
       return false;
     }

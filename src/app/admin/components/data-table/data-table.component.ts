@@ -163,9 +163,9 @@ export class DataTableComponent {
       if (!updated) {
         this.data.push(res);
       }
-      alert("Data berhasil diupdate")
     }
     );
+    alert("Data berhasil diupdate")
   }
 
   deleteUser() {
@@ -174,5 +174,6 @@ export class DataTableComponent {
       this.data = this.data.filter(item => item.id !== res.id);
     }
     );
+    alert("Data berhasil dihapus")
   }
 }
