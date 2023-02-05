@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CrudUserService } from '../../services/crud-user.service';
 import { from } from 'rxjs';
@@ -20,7 +20,7 @@ export class DataTableComponent {
     image: string
   }[] = [];
   userPerPage: number = 5;
-  public selectedPage = 1;
+  selectedPage = 1;
   users: any[] = []
   modalAdd: boolean = false
   modalEdit: boolean = false
@@ -34,6 +34,9 @@ export class DataTableComponent {
   isAct: any;
   more: boolean = false
   selectedUser: any;
+  searchValue: string = ''
+  searchValueChanged: EventEmitter<string> = new EventEmitter<string>()
+  searchText: string = ''
 
   constructor(private http : HttpClient, private crudService: CrudUserService) {
   }
@@ -117,6 +120,7 @@ export class DataTableComponent {
     from(this.crudService.addUser(this.firstName, this.lastName, this.username, this.email, this.gender, this.image))
     .subscribe(res => {
       this.data.push(res)
+      alert("Data berhasil ditambah")
     }
     );
   }
@@ -163,17 +167,22 @@ export class DataTableComponent {
       if (!updated) {
         this.data.push(res);
       }
+      alert("Data berhasil diupdate")
     }
     );
-    alert("Data berhasil diupdate")
   }
 
   deleteUser() {
     from(this.crudService.deleteUser(this.id))
     .subscribe(res => {
       this.data = this.data.filter(item => item.id !== res.id);
+      alert("Data berhasil dihapus")
     }
     );
-    alert("Data berhasil dihapus")
+  }
+
+  onSearchValueChanged() {
+    this.searchValueChanged.emit(this.searchValue);
+    this.searchText = this.searchValue;
   }
 }
