@@ -121,6 +121,9 @@ export class DataTableComponent {
     .subscribe(res => {
       this.data.push(res)
       alert("Data berhasil ditambah")
+      if(res) {
+        this.modalAdd = !this.modalAdd
+      }
     }
     );
   }
@@ -168,6 +171,10 @@ export class DataTableComponent {
         this.data.push(res);
       }
       alert("Data berhasil diupdate")
+      if(res) {
+        this.modalEdit = !this.modalEdit
+        this.more = !this.more
+      }
     }
     );
   }
@@ -183,6 +190,6 @@ export class DataTableComponent {
 
   onSearchValueChanged() {
     this.searchValueChanged.emit(this.searchValue);
-    this.searchText = this.searchValue;
+    this.searchText = this.searchValue.toLowerCase();
   }
 }
