@@ -62,8 +62,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - [Deployment](https://master--capable-biscuit-e29388.netlify.app/)
 - Note, if you want to try login: 
-    username = kminchelle
-    password = 0lelplR
+- username = kminchelle
+- password = 0lelplR
 
 <p align="right">(<a href="#top">back to table of contents</a>)</p>
 
@@ -71,12 +71,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - [x] Login
 - [x] Landing Page:
-  [x]  1. Home
-  [x]  2. About Us
-  [x]  3. 404 Not Found
+- [x]  - Home
+- [x]  - About Us
+- [x]  - 404 Not Found
 - [x] Admin:
-  [x]  1. Dashboard
-  [x]  2. User Management (Table All User, Search User, Create, Update, Delete)
+- [x]  - Dashboard
+- [x]  - User Management (Table All User, Search User, Create, Update, Delete)
 
 <p align="right">(<a href="#top">back to table of contents</a>)</p>
 
