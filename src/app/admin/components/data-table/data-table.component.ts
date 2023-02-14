@@ -45,25 +45,12 @@ export class DataTableComponent {
     // Start of Get Data Users
     this.http.get<{users: any[]}>('https://dummyjson.com/users')
     .subscribe(Response => {
-      if(Response){ 
-        hideloader();
-      }
       this.res=Response.users;
       this.data=this.res;
 
       let pageIndex = (this.selectedPage - 1) * this.userPerPage
       this.users = this.data.slice(pageIndex, this.userPerPage)
     });
-
-    function hideloader(){
-      const loadingElement = document.getElementById('loading')
-      if (loadingElement){
-          loadingElement.style.display = 'none';
-      }
-    }
-    // End of Get Data Users
-
-    this.data
   }
 
   // Start of paginate function
@@ -178,7 +165,9 @@ export class DataTableComponent {
     }
     );
   }
+  //End of Edit User's Modal
 
+  // Delete User
   deleteUser() {
     from(this.crudService.deleteUser(this.id))
     .subscribe(res => {

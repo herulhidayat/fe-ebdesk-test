@@ -1,9 +1,9 @@
 <aside class="h-screen fixed top-0 z-10 max-h-screen flex flex-row font-rubik">
     <div class="bg-[#2A3042] flex flex-col justify-start items-start p-[24px] gap-[45px] transition-all ease-linear" [ngClass]="{'w-[75px]':isMenu, 'w-[240px]':!isMenu}">
-        <div>
+        <a href="">
             <img src="../../../../assets/images/admin/Logo-admin.svg" alt="" class="w-[132px]" [ngClass]="{'hidden':isMenu, '':!isMenu}">
             <img src="../../../../assets/images/admin/Logo-admin-small.svg" alt="" class="h-[33px] absolute left-[20px]" [ngClass]="{'':isMenu, 'hidden':!isMenu}">
-        </div>
+        </a>
         <div class="flex flex-col items-start gap-[15px]">
             <a href="/admin" class="flex flex-row justify-start items-center gap-[14px]">
                 <img src="../../../../assets/images/admin/fi_dash (1).svg" alt="" [ngClass]="{'hidden': active === isDash, '': active !== isDash}">

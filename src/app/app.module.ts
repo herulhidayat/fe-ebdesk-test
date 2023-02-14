@@ -22,6 +22,7 @@ import { AuthService } from './admin/services/auth.service';
 import { AuthGuard } from './admin/services/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { CrudUserService } from './admin/services/crud-user.service';
+import { ClickOutsideDirective } from './admin/directives/click-outside.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CrudUserService } from './admin/services/crud-user.service';
     AdminSidebarComponent,
     DashboardAdminComponent,
     DataSourceAdminComponent,
-    DataTableComponent
+    DataTableComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
